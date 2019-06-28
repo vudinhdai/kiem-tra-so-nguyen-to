@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiem tra so nguuen to</title>
+</head>
+<body>
+<script>
+    function kiem_tra_snt(n){
+        let flag =true;
+        if (n < 2) {
+            flag =false;
+        }else if (n == 2) {
+            flag =true;
+        }else if (n % 2 == 0) {
+            flag = false;
+        }else {
+            for (let i = 3; i <Math.sqrt(n); i += 2){
+                if (n % i == 0) {
+                    flag=false;
+                    break;
+                }
+            }
+        }
+        return flag;
+
+    }
+    let x=2;
+    let count =0;
+    while (count < 20) {
+        if (kiem_tra_snt(x)){
+            document.write(x+ "<br>");
+            x ++;
+            count ++;
+        }else x++;
+    }
+
+
+</script>
+</body>
+</html>
